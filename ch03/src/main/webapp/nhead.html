@@ -14,10 +14,10 @@ body {
 }
 
 .header {
-	width: 630px;
+	width: 800px;
 	height: 100px;
 	margin: 50px auto;
-	background-color: #ddd;
+	b1ackground-color: #ddd;
 }
 
 .header .logo, .header .search-box {
@@ -33,9 +33,10 @@ body {
 }
 
 .search-box {
-	width: 400px;
+	width: 550px;
 	height: 52px;
-	background-color: #ccc;
+	b1ackground-color: #ccc;
+	float: right;
 }
 
 .search-box input, .search-box a {
@@ -46,6 +47,56 @@ body {
 	float: right;
 }
 
+.btn-search button {
+	margin: 15px;
+	font-size: 0;
+	width: 22px;
+	height: 22px;
+	background: url("/ch03/images/nsplite.png") no-repeat -420px 0 / 457px 434px;
+	background-color : #19ce60;
+	border : none;
+}
+
+.header .search-box #dropdown {
+	margin: 23px;
+	display: inline-block;
+	width:10px;
+	height: 5px;
+	background: url("/ch03/images/nsplite.png") no-repeat -408px -77px / 457px 434px;
+	vertical-align: top;  
+}
+
+.header .search-box #keyboard {
+	display: inline-block;
+	margin: 20px 0 0 0;
+	width:20px;
+	height: 12px;
+	background: url("/ch03/images/nsplite.png") no-repeat -420px -395px / 457px 434px;
+	vertical-align: top;  
+}
+
+.search-box input {
+	width : 360px;
+	height : 52px;
+	border : none;
+	outline : 0;
+	font-size: 18px;
+}
+
+.btn-search {
+	width : 50px;
+	height : 55px;
+	border : 2px solid #19ce60;
+	background-color : #19ce60;
+}
+
+.header .search-box .search {
+	width : 450px;
+	height: 55px;
+	border: 2px solid #19ce60;
+    border-radius: 2px;
+    float: right;
+}
 
 </style>
 </head>
@@ -54,10 +105,13 @@ body {
 		<h1 class = "logo"></h1>
 		<div class="search-box">
 			<div class="btn-search">
-				<button>돋보기</button>
-				</div>
-				<a href="#" id="dropdown">드롭다운</a> <a href="#" id="keyboard">키보드</a>
+				<button></button>
+			</div>
+			<div class="search">
+				<a href="#" id="dropdown"></a> 
+				<a href="#" id="keyboard"></a>
 				<input type="text" />
+			</div>
 						
 		</div>
 	</div>
