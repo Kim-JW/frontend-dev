@@ -20,6 +20,10 @@ body {
 	background-color: #ddd;
 }
 
+.header .logo, .header .search-box {
+	float: left;
+}
+
 .header .logo {
 	width: 222px;
 	height: 52px;
@@ -30,21 +34,31 @@ body {
 .search-box {
 	width: 400px;
 	height: 52px;
-	
 	background-color: #ccc;
 }
+
+.search-box input, .search-box a {
+	display: block;
+}
+
+.search-box input, .search-box .btn-search .search-box a{
+	float: right;
+}
+
 
 </style>
 </head>
 <body>
 	<div class="header">
-		<h1 class = "logo">네이버</h1>
-		<form class="search-box">
-			<input type="text" />
-			<a href="#">키보드</a>
-			<a href="#">드롭다운</a>
-			<button>돋보기</button> 
-		</form>
+		<h1 class = "logo"></h1>
+		<div class="search-box">
+			<div id="btn-search">
+				<input type="text" />
+				<a href="#" id="keyboard">키보드</a>
+				<a href="#" id="dropdown">드롭다운</a>		
+				<button>돋보기</button>
+			</div> 
+		</div>
 	</div>
 </body>
 </html>
