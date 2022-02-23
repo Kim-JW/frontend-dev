@@ -37,3 +37,20 @@ var numbers = numbers.slice(1, 3);
 console.log(numbers);
 
 // splice
+// index부터 count 개를 삭제한 후, 삭제된 요소를 반환
+console.log(fruits);
+var fruits2 = fruits.splice(0/*index*/, 2/*count*/);
+console.log(fruits2, fruits);
+
+// index부터 count개를 삭제한 후, replace로 대체, 삭제된 요소를 반환
+var a1 = [0, 1, 2, 3, 4];
+var a2 = a1.splice(1/*index*/, 3/*count*/, 10/*replace*/);
+console.log(a2, a1);
+
+// a1.removeAt(1)
+var a1 = [0, 1, 2, 3, 4];
+var a2 = a1.splice(1, 0, 10);
+console.log(a2, a1);
+
+// a1.insertAt(1, 10)
+
