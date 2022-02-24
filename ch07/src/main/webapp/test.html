@@ -3,28 +3,48 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--소스버전(서비스 서버 호스팅) -->
-<script type="text/javascript" src = "jquery/jquery-3.6.0.js"></script >
+<script type="text/javascript" src = "jquery/jquery-simple.js"></script >
 <!--압축버전(서비스 서버 호스팅) -->
 <!--script type="text/javascript" src = "jquery/jquery-3.6.0.min.js"></script-->
 
-<script type="text/javascript">
+<script>
 // 1. jQuery는 function type의 객체다(함수다)
 // 2. jQuery 함수를 호출하면 object 타입의 객체(jQuery 객체, 유사배열)를 반환한다. 
 // 3. $는 jQuery함수 객체를 참조한다. ($는 jQuery 함수 객체 이름의 Alias 이다.)
 // jQuery 라이브러리의 정상적인 로딩은 jQuery 객체의 jquery property의 값(버전정보)으로 확인할 수 있다.
 
-var $obj = jQuery();
+/* var $obj = jQuery();
 
 console.log(typeof(jQuery), typeof($obj), $obj.jquery);
 
 var $obj2 = $();
-console.log(typeof(jQuery), typeof($obj2), $obj2.jquery);
+console.log(typeof(jQuery), typeof($obj2), $obj2.jquery); */
+
+$(function(){
+	console.log("load!");
+	
+	$lis = $(".list-item");
+	console.log(typeof(jQuery), typeof($lis), $lis.jquery);
+	
+	$lis.click(function(){
+		console.log(this);
+	});
+	
+	setTimeout(function(){
+		$lis.css("color", "blue");
+	}, 2000);
+})
 
 // console.log(jQuery().jquery);
 </script>
 </head>
 <body>
-	<h1>jQuery 로딩</h1>
+	<h1>jQuery 직접 만들어 보기 로딩</h1>
+	<ul>
+		<li class = "list-item">테스트</li>
+		<li>테스트</li>
+		<li class = "list-item">테스트</li>
+	</ul>
 </body>
 </html>
  
