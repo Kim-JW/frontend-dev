@@ -9,7 +9,7 @@ import com.poscoict.ch08.controller.vo.GuestbookVo;
 
 @Controller("apiTestController")
 @RequestMapping("/test")
-public class ApiController {
+public class ApiTestController {
 	
 	@RequestMapping("/text")
 	public String text() {
@@ -33,8 +33,33 @@ public class ApiController {
 //		return vo;
 //	}
 	
+	@RequestMapping("/xml")
+	public String xml() {
+		return "xml";
+	}
+	
 	@RequestMapping("/json01")
 	public String json1() {
 		return "json01";
+	}
+	
+	@RequestMapping("/json02")
+	public String json2() {
+		return "json02";
+	}
+	
+	@RequestMapping("/post01")
+	public String post01() {
+		return "post01";
+	}
+	
+	@RequestMapping("/json03")
+	public String json03() {
+		return "json03";
+	}
+	
+	@RequestMapping("/json04")
+	public String json04() {
+		return "json04";
 	}
 }

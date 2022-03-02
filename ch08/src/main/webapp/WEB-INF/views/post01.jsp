@@ -36,7 +36,7 @@ $(function(){
 </script>
 </head>
 <body>
-<h1>AJAX Test : Text Format Data ajax 함수 사용하기(get)</h1>
+<h1>AJAX Test : Text Format Data XmlHttpRequest를 직접 사용하기</h1>
 	<button>데이터 가져오기</button>
 	<div id = "data">변경전</div>
 </body>

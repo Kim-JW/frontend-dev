@@ -13,20 +13,22 @@ pageEncoding="UTF-8"%>
 $(function(){
 	$("button").click(function(){
 		$.ajax({
-			url: "${pageContext.request.contextPath}/api/json",
+			url: "${pageContext.request.contextPath}/api/xml",
 			async: true,
 			type: 'get',
-			dataType: 'json',
-			success: function(response){
-				if(response.result !== "success"){
-					console.error(response.message);
-					return;
-				}
+			dataType: 'xml',
+			success: function(xml){
+				console.log(xml);
+	
+				var $data = $("data", xml);
+				var $no = $("no", $data);
+				var $name = $("name", $data);
+				var $message= $("message", $data);
 				
 				var html = "";
-				html += ("<h1>" + response.data.no + "</h1>");
-				html += ("<h2>" + response.data.name + "</h2>");
-				html += ("<h3>" + response.data.message + "</h3>");
+				html += ("<h1>" + $no.text() + "</h1>");
+				html += ("<h2>" + $name.text() + "</h2>");
+				html += ("<h3>" + $message.text() + "</h3>");
 				
 				$("#data").append(html);
 			}
@@ -36,7 +38,7 @@ $(function(){
 </script>
 </head>
 <body>
-<h1>AJAX Test : Text Format Data ajax 함수 사용하기(get)</h1>
+<h1>AJAX Test : Text Format Data xml 사용하기(get)</h1>
 	<button>데이터 가져오기</button>
 	<div id = "data">변경전</div>
 </body>
