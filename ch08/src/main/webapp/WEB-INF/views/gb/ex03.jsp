@@ -59,13 +59,43 @@ $(function(){
 		modal: true,
 		buttons: {
 			"삭제": function(){
+				var no = $("#hidden-no").val();
+				var password = $("#password-delete").val(); 
+				var url = "${pageContext.request.contextPath}/api/guestbook/delete/" + no;
 				
+				$.ajax({
+					url : url,
+					type : 'post',
+					dataType: 'json',
+					data : "password=" + password,
+					success: function(response){
+						if(response.result !== 'success') {
+							console.error(response.message);
+							console.log(response);
+							return;	
+						}
+						
+						if(response.data == -1){
+							$(".validateTips.error").show();
+							$("#password-delete").val("").focus();
+							return;
+						}
+						// 삭제가 된 경우
+						$("#list-guestbook li[data-no='"+ response.data + "']").remove();
+						dialogDelete.dialog('close');		
+					}
+				
+				});
 			},
 			"취소": function(){
-				$("#password-delete").val("");
-				$("#hidden-no").val("");
+				
 				$(this).dialog('close');
 			}
+		},
+		close: function(){
+			$("#password-delete").val("");
+			$("#hidden-no").val("");
+			$(".validateTips.error").hide();
 		}
 	});
 	
