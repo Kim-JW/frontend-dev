@@ -61,4 +61,8 @@ public class GuestbookController {
 		return JsonResult.success(list);
 		
 	}
+	
+	public JsonResult ex03() {
+		
+	}
 }

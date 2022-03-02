@@ -56,10 +56,32 @@ $(function(){
 	// 삭제 다이알로그 객체 만들기 
 	var dialogDelete = $("#dialog-delete-form").dialog({
 		autoOpen: false,
-		modal: true
+		modal: true,
+		buttons: {
+			"삭제": function(){
+				
+			},
+			"취소": function(){
+				$("#password-delete").val("");
+				$("#hidden-no").val("");
+				$(this).dialog('close');
+			}
+		}
 	});
 	
+	// 글삭제 버튼 Click 이벤트 처리(Live Event)
+	$(document).on('click', "#list-guestbook li a", function(event){
+		event.preventDefault();
+		
+		var no = $(this).data("no");
+		$("#hidden-no").val(no);
+		
+		dialogDelete.dialog('open');
+	});
 	
+	/* $("#list-guestbook li a").click(function(event){
+		
+	}); */
 	
 	// dialogDelete.dialog("open");
 	
