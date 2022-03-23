@@ -7,6 +7,12 @@ const power = function(x) {
     return x * x;
 }
 
+const p2 = (x) => {
+    return x * x;
+}
+
+const p3 = (x) => x * x;
+
 const numbers = [1, 2, 3, 4, 5];
 numbers.forEach(function(n){
     process.stdout.write(`${n}: ${power(n)}\t`);
