@@ -1,4 +1,4 @@
-const ex01 = function(param, callback) { // 콜백은 맨 뒤에 넣어야함.
+const fetch = function(param, callback) { // 콜백은 맨 뒤에 넣어야함.
     //
     // 비동기 코드 : 파일 시스템 접근, 네트워크 통신, SQL -> DB, setTimeout
     //
@@ -9,7 +9,12 @@ const ex01 = function(param, callback) { // 콜백은 맨 뒤에 넣어야함.
     // }) 랑 비슷한 격
 
     setTimeout(function(){
-        callback(null, 'ok');
+        if(param === 'param-data') {
+            callback(null, 'ok');
+        } else {
+            callback(new Error('fail'), null);
+        }
+        
     }, 2000);
     
 }
@@ -17,13 +22,26 @@ const ex01 = function(param, callback) { // 콜백은 맨 뒤에 넣어야함.
 
 // ex01("http://123.123.123.123/api");
 
-// test01 : success
-ex01('param-data', function(error, res){
+// test01: success
+fetch('param-data', function(error, res){
     if(error) {
         console.log(error)
     } else {
         console.log(res)
     }
 });
+
+// test01: fail
+fetch('param-error', function(error, res){
+    if(error) {
+        console.log(error)
+    } else {
+        console.log(res)
+    }
+});
+
+// 최종 목표
+// res = ex01('');
+// console.log(res);
 
 console.log("wait ....");
